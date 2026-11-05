@@ -14,7 +14,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     NUMEXPR_NUM_THREADS=1
 
 # HumanEvalPack's pinned Python harness prepends NumPy imports to every candidate.
-# Sources: https://github.com/bigcode-project/bigcode-evaluation-harness/blob/8fc5bae6479c4fbbb28c3f8b644f6a15b3f3b5bd/bigcode_eval/tasks/humanevalpack.py#L371-L375 and https://pypi.org/project/numpy/2.5.2/
+# Sources: https://github.com/bigcode-project/bigcode-evaluation-harness/blob/8fc5bae6479c4fbbb28c3f8b644f6a15b3f3b5bd/bigcode_eval/tasks/humanevalpack.py#L394-L397 and https://pypi.org/project/numpy/2.5.2/
 RUN python -m pip install --no-cache-dir --disable-pip-version-check \
     --root-user-action=ignore "numpy==2.5.2"
 
