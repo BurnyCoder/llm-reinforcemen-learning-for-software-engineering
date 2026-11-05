@@ -125,7 +125,12 @@ print(tokenizer.decode(output[0, inputs.input_ids.shape[1] :], skip_special_toke
 ```
 
 The immutable revision above was re-downloaded and this exact snippet returned a fenced
-`clamp_value` implementation using `max(low, min(value, high))`.
+`clamp_value` implementation using `max(low, min(value, high))`, according to the
+[documentation audit](reports/evidence/documentation-audit.json); its raw run log is not tracked.
+The [verification record](reports/evidence/verification.json) independently reports a fenced,
+correct `clamp_value` repair from the same snippet at original revision `5b6e22a4…`, whose
+`model.safetensors` and `adapter/adapter_model.safetensors` have the same Hub LFS SHA-256 as
+`8dc6fa7d…` (only `README.md` differs between the two revision trees).
 
 The model is specialized for constrained single-function Python repair. Do not execute generated code without isolation.
 
